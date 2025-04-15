@@ -8,8 +8,10 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.view.WindowManager
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -45,6 +47,7 @@ class NumberLogin : AppCompatActivity() {
         var btnNine = findViewById<Button>(R.id.nine)
         var b = findViewById<Button>(R.id.b)
         var a = findViewById<Button>(R.id.a)
+        var phoneNumber = findViewById<EditText>(R.id.phoneEditText)
 
         val btnList = listOf<Button>(
             btnZero,
@@ -70,6 +73,9 @@ class NumberLogin : AppCompatActivity() {
             showSoftInputOnFocus = false   // Blocks system keyboard
         }
 
+
+        // Hada Code dyal dik Background li katdar 3la lbuttons tal mn be3da wn3awd n9adha hssn
+
        btnList.forEach {
            it.apply {
                setOnClickListener {
@@ -85,5 +91,22 @@ class NumberLogin : AppCompatActivity() {
            }
        }
 
+        // Spinner Hna
+
+        val spinner: Spinner = findViewById(R.id.mySpinner)
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.planets_array,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, Welcome::class.java))
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            finish()
+        }, 5000)
     }
 }

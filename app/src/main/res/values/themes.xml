@@ -7,5 +7,7 @@
 
     <style name="Theme.LandRenting" parent="Base.Theme.LandRenting" />
 
-
+    <style name="MySpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:textColor">#20FE32</item> <!-- Red color -->
+    </style>
 </resources>

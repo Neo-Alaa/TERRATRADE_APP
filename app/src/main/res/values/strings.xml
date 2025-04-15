@@ -1,3 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LandRenting</string>
+    <string-array name="planets_array">
+        <item>+212</item>
+        <item>+1</item>
+        <item>+33</item>
+        <item>+49</item>
+    </string-array>
 </resources>
