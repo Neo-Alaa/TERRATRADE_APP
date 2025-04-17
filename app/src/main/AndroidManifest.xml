@@ -11,6 +11,9 @@
         android:theme="@style/Theme.LandRenting"
         tools:targetApi="31">
         <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
             android:name=".Welcome"
             android:exported="false" />
         <activity
