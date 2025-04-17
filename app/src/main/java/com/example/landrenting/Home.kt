@@ -7,6 +7,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.landrenting.Adapter.LandAdapter
+import com.example.landrenting.Model.LandModel
 
 class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,5 +25,25 @@ class Home : AppCompatActivity() {
                 )
         setContentView(R.layout.activity_home)
 
+        // Initialize RecyclerView
+        val propertiesRecycler: RecyclerView = findViewById(R.id.propertiesRecycler)
+        propertiesRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+        // Create sample data
+        val landList = listOf(
+            LandModel(R.drawable.recimagetest, "New York City", "1800DH", "Alaa"),
+            LandModel(R.drawable.recimagetest, "Los Angeles", "2200DH", "Mohamed"),
+            LandModel(R.drawable.recimagetest, "Chicago", "1500DH", "Sarah"),
+            LandModel(R.drawable.recimagetest, "Miami", "2500DH", "David"),
+            LandModel(R.drawable.recimagetest, "Seattle", "1900DH", "Emma")
+        )
+
+        // Set up adapter
+        val adapter = LandAdapter(landList) { land ->
+            // Handle item click here
+            // You can open a detail activity or show a dialog
+        }
+
+        propertiesRecycler.adapter = adapter
     }
 }
