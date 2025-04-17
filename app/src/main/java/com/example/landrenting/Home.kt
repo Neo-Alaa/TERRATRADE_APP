@@ -27,7 +27,9 @@ class Home : AppCompatActivity() {
 
         // Initialize RecyclerView
         val propertiesRecycler: RecyclerView = findViewById(R.id.propertiesRecycler)
+        val propertiesRecycler2: RecyclerView = findViewById(R.id.propertiesRecycler2)
         propertiesRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        propertiesRecycler2.layoutManager = LinearLayoutManager(this , LinearLayoutManager.HORIZONTAL , false)
 
         // Create sample data
         val landList = listOf(
@@ -38,12 +40,25 @@ class Home : AppCompatActivity() {
             LandModel(R.drawable.recimagetest, "Seattle", "1900DH", "Emma")
         )
 
+        val landList2 = listOf(
+            LandModel(R.drawable.testimage, "New York City", "1800DH", "Alaa"),
+            LandModel(R.drawable.telech, "Los Angeles", "2200DH", "Mohamed"),
+            LandModel(R.drawable.telech, "Chicago", "1500DH", "Sarah"),
+            LandModel(R.drawable.recimagetest, "Miami", "2500DH", "David"),
+            LandModel(R.drawable.testimage, "Seattle", "1900DH", "Emma")
+        )
+
         // Set up adapter
         val adapter = LandAdapter(landList) { land ->
             // Handle item click here
             // You can open a detail activity or show a dialog
         }
+        val adapter2 = LandAdapter(landList2) { land ->
+            // Handle item click here
+            // You can open a detail activity or show a dialog
+        }
 
         propertiesRecycler.adapter = adapter
+        propertiesRecycler2.adapter = adapter2
     }
 }

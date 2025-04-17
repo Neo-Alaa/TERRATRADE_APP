@@ -12,7 +12,16 @@
 
     <item
         android:id="@+id/sell"
-        android:icon="@drawable/settings_sliders"
+        android:icon="@drawable/leftrightarrows"
         android:title="SELL" />
+    <item
+        android:id="@+id/favoris"
+        android:icon="@drawable/heart"
+        android:title="Favorites" />
+    <item
+        android:id="@+id/Profile"
+        android:icon="@drawable/user"
+        android:title="Profile" />
+
 
 </menu>

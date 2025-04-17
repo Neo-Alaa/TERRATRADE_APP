@@ -8,7 +8,7 @@
     android:background="#F5F5F5"
     tools:context=".Home">
 
-    <!-- Header with Shadow -->
+    <!-- Header (Sticky at top) -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
@@ -20,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Your existing header content -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -34,7 +35,6 @@
                 android:padding="25dp"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-                <!-- Your existing header content (ImageView, TextView, etc.) -->
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="30dp"
@@ -65,128 +65,187 @@
                     android:id="@+id/imageView"
                     android:layout_width="70dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/best"
                     android:scaleType="fitXY"
+                    android:src="@drawable/best"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <LinearLayout
-        android:id="@+id/parentBody"
+    <!-- Scrollable Content Area -->
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="25dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Our Projects"
-            android:textColor="@color/editedBlack"
-            android:textSize="20sp" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ourLands"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="220dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/testimage" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="Our Lands"
-                    android:textColor="@color/editedBlack"
-                    android:textSize="30sp" />
-            </FrameLayout>
-
-        </androidx.cardview.widget.CardView>
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="25dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="25dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_semibold"
-                android:gravity="center"
-                android:text="House for sell"
+                android:text="Our Projects"
                 android:textColor="@color/editedBlack"
                 android:textSize="20sp" />
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ourLands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/testimage" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Our Lands"
+                        android:textColor="@color/editedBlack"
+                        android:textSize="30sp" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
-                android:id="@+id/seeAllContainer"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="end|center"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/seeAll"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins_medium"
-                    android:text="See all"
-                    android:textColor="@color/appColor"
-                    android:textSize="16sp" />
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="House for sell"
+                    android:textColor="@color/editedBlack"
+                    android:textSize="20sp" />
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="5dp"
-                    android:src="@drawable/right_arrow"
-                    app:tint="@color/appColor" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/seeAllContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="end|center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/seeAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See all"
+                        android:textColor="@color/appColor"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/right_arrow"
+                        app:tint="@color/appColor" />
+                </LinearLayout>
             </LinearLayout>
 
+            <!-- RecyclerView with fixed height -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/propertiesRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="241dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_property" />
+
+            <!-- Add other content here as needed -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Land For Sell"
+                    android:textColor="@color/editedBlack"
+                    android:textSize="20sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/seeAllContainer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="end|center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/seeAll2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="See all"
+                        android:textColor="@color/appColor"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/right_arrow"
+                        app:tint="@color/appColor" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/propertiesRecycler2"
+                android:layout_width="match_parent"
+                android:layout_height="241dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_property" />
         </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/propertiesRecycler"
-            android:layout_width="match_parent"
-            android:layout_height="241dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_property" />
-    </LinearLayout>
-
+    <!-- Shadow above bottom navigation -->
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"
@@ -195,20 +254,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Bottom Navigation (Sticky at bottom) -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="75dp"
+        android:background="@drawable/navbottom_shape"
+        android:textAlignment="textStart"
+        app:itemIconTint="@color/appColor"
+        app:itemRippleColor="@color/appColor"
+        app:itemTextAppearanceInactive="@font/poppins_regular"
+        app:itemTextColor="@color/appColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav"
-        app:itemIconTint="@color/appColor"
-        app:itemRippleColor="@color/appColor"
-        app:itemTextColor="@color/appColor"
-        app:itemTextAppearanceInactive="@font/poppins_regular"
-        android:background="@drawable/navbottom_shape"
-        />
-
+        app:menu="@menu/bottom_nav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
