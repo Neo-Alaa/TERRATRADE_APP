@@ -95,6 +95,7 @@ class NumberLogin : AppCompatActivity() {
 
         // Verification button (b)
         btnB.setOnClickListener {
+            checkPhoneNumberValidity(countrySpinner, phoneEditText, btnB)
             if (btnB.isClickable) {
                 startActivity(Intent(this, Welcome::class.java))
             }
@@ -120,6 +121,6 @@ class NumberLogin : AppCompatActivity() {
             btnB.setTextColor(getColor(R.color.appColor))
         }
 
-
     }
 }
+
