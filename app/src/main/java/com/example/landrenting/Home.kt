@@ -184,7 +184,39 @@ class Home : AppCompatActivity() {
                 else -> false
             }
         }
+
+        // Handle clicks on navigation drawer menu items
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_logout -> {
+//                    logOut() mazal ghanzid logOut function
+                    startActivity(Intent(this,MainActivity::class.java))
+                    true
+                }
+                R.id.nav_home -> {
+                    startActivity(Intent(this,Home::class.java))
+                    drawerLayout.closeDrawers()
+                    true
+                }
+                R.id.nav_settings -> {
+                    // startActivity(Intent(this, SettingsActivity::class.java))
+                    drawerLayout.closeDrawers()
+                    true
+                }
+                R.id.nav_share -> {
+                    true
+                }
+                R.id.nav_about -> {
+//                    go to about
+                    drawerLayout.closeDrawers()
+                    true
+                }
+                else -> false
+            }
+        }
     }
+
+
 
     fun getFavoriteLands(): List<LandModel> {
         return viewModel.favoriteLands.value ?: emptyList()
