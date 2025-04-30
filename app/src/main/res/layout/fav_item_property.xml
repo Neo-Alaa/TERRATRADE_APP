@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/outer_cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Property Image -->
+        <ImageView
+            android:id="@+id/imgRecHome"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/land_image_description"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@drawable/recimagetest" />
+
+        <!-- Favorite Icon (Overlay on Image) -->
+        <ImageView
+            android:id="@+id/favRecFragment"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:padding="12dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/favorite_icon_background"
+            android:src="@drawable/heartabd"
+            android:contentDescription="Favorite Button"
+            app:tint="@color/favorite_red"
+            app:layout_constraintTop_toTopOf="@id/imgRecHome"
+            app:layout_constraintEnd_toEndOf="@id/imgRecHome" />
+
+        <!-- Property Details Container -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/imgRecHome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- Land Name (Using userNameRecHome ID from adapter) -->
+            <TextView
+                android:id="@+id/userNameRecHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/editedBlack"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Land Name Placeholder" />
+
+            <!-- Location (Using txtRecHome ID from adapter) -->
+            <TextView
+                android:id="@+id/txtRecHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:textColor="@android:color/darker_gray"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="4dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="Location Placeholder" />
+
+            <!-- Price (Using priceRecHome ID from adapter) -->
+            <TextView
+                android:id="@+id/priceRecHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/appColor"
+                tools:text="$150,000" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

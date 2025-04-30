@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LandRenting</string>
+    <string-array name="planets_array">
+        <item>+212</item>
+        <item>+1</item>
+        <item>+33</item>
+        <item>+49</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="profile_title">Profile</string>
+    <string name="edit">Edit</string>
+    <string name="profile_name_placeholder">Jonika William</string>
+    <string name="profile_email_placeholder">Smartsanthoshsandys@gmail.com</string>
+    <string name="profile_phone_placeholder">+91 9566725782</string>
+    <string name="sell_your_house_plots">Sell Your House/Plots</string>
+    <string name="buy">Buy</string>
+    <string name="log_out">Log Out</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="sell">Sell</string>
+    <string name="favorites">Favorites</string>
+    <string name="search_hint">Search by name or location...</string>
+    <string name="search_button_text">Search</string>
+    <string name="land_image_description">Image of the land</string>
+    <string name="for_sale">FOR SALE</string>
+    <string name="for_rent">FOR RENT</string>
+    <string name="results_found_format">%d results found</string>
+</resources>

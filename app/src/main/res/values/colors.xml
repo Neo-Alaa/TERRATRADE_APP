@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="appColor">#48139E</color>
+    <color name="whiteEdited">#F0F4FC</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="sale_badge">#4CAF50</color>
+    <color name="rent_badge">#2196F3</color>
+    <color name="orange">#FE7C27</color>
+    <color name="editedBlack">#200E32</color>
+    <color name="newWhite">#F8FDFF</color>
+    <color name="favorite_red">#E53935</color>
+    <color name="green_whatsapp">#25D366</color>
+    <color name="blue_ciel">#0E95E9</color>
+
+    <!-- Status Colors -->
+    <color name="pending_color">#FFA000</color>
+    <color name="approved_color">#4CAF50</color>
+    <color name="rejected_color">#F44336</color>
+</resources>
